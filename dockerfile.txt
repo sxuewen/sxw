@@ -1,16 +1,15 @@
 #基础镜像（改一下）
-FROM tomcat:7.0.86
+FROM tomcat:7.0.69
 
 
 
 #作者
 
-LABEL maintainer="zhangchx <njzcx@126.com>"
+LABEL maintainer="sxw <m15933020969@163.com>"
 
 
 
-#运行安装
-telnet和nc
+#运行安装telnet和nc
 RUN apt-get install -y telnet nc; exit 0
 
 
@@ -49,4 +48,4 @@ ENTRYPOINT ["catalina.sh","run"]
 
 #拷贝war包到tomcat
 
-COPY target/DataCollect.war ${CATALINA_HOME}/webapps/
+COPY target/wen-0.0.1-SNAPSHOP.war ${CATALINA_HOME}/webapps/
